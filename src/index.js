@@ -1,6 +1,6 @@
 import './styles.css';
 
-const botones = document.querySelectorAll('nav button');
+const botones = document.querySelectorAll('.nav-menu button');
 const logoLink = document.getElementById('logo-link');
 
 import { menuF } from "./menu";
