@@ -10,9 +10,20 @@
     <header>
         <nav>
             <a href="#" id="logo-link"><img src="./IMAGES/logo.png" alt="Nanixhe Chicken Logo" class="nav-logo"></a>
-            <button class="active">Inicio</button>
-            <button>Menú</button>
-            <button>Nosotros</button>
+            
+            <!-- Hamburger menu button for mobile -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Navigation menu -->
+            <div class="nav-menu" id="nav-menu">
+                <button class="active">Inicio</button>
+                <button>Menú</button>
+                <button>Nosotros</button>
+            </div>
         </nav>
     </header>
     
@@ -44,5 +55,27 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            hamburgerMenu.addEventListener('click', function() {
+                hamburgerMenu.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a nav button
+            const navButtons = navMenu.querySelectorAll('button');
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    hamburgerMenu.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
